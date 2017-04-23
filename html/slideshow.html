@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>轮播图</title>
+	<link rel="stylesheet" href="slideshow.css">
+</head>
+<body>
+	<div id="slide">
+		<div class="picture-box">
+		<!--如何加载不同文件夹下面的图片-->
+			<img class="selected" src="../网上商城/img/caihongma.jpg" alt="">
+			<img src="../网上商城/img/dianwannvqiang.jpg" alt="">
+			<img src="../网上商城/img/dianwanEZ.jpg" alt="">
+			<img src="../网上商城/img/dianwanruiwen.jpg" alt="">
+		</div>
+		<ul class="selected-box">
+			<li class="selected"><span>1</span></li>
+			<li><span>2</span></li>
+			<li><span>3</span></li>
+			<li><span>4</span></li>
+		</ul>
+		<div id="arrow-box">
+		<span id="pre">&lt</span>
+		<span id="next">&gt</span>
+		</div>
+	</div>
+	<script>
+	var oSlide = document.getElementById("slide"),
+		aLi = oSlide.getElementsByTagName("li"),
+		aImg = oSlide.getElementsByTagName("img");
+		var oNext = document.getElementById("next"),
+			oPre = document.getElementById("pre");
+		var timer,iNow=0;
+		function changeImg(idx){
+			for(var j=0;j<aLi.length;j++){
+					aLi[j].className ="";
+					aImg[j].className = '';
+				}
+				aImg[idx].className = 'selected';
+				aLi[idx].className = 'selected';
+		}
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].num=i;
+			aLi[i].onmouseover = function(){
+				changeImg(this.num);
+				iNow=this.num;
+			}
+		}
+		
+		oNext.onclick = function(){
+			iNow++;
+			iNow = iNow%aImg.length;
+			changeImg(iNow);	
+		}
+		// var iPic = 3;
+		oPre.onclick = function(){
+			iNow--;
+			if(iNow == -1){
+				iNow=aImg.length-1;
+			}
+			changeImg(iNow);
+		}
+
+		function run(){
+			timer = setInterval(function(){
+				oNext.onclick();
+			},2000);
+		}
+		run();
+
+		oSlide.onmouseover = function(){
+			clearInterval(timer);
+		}
+		oSlide.onmouseout = function(){
+			run();
+		}
+	</script>
+</body>
+</html>
