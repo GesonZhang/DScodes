@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>折叠</title>
+	<link rel="stylesheet" href="折叠.css">
+</head>
+<body>
+	<div>
+		<ul id="control">
+			<li class="cont-sub"><span>管理区</span>
+				<ul class="aa">
+					<li>001</li>
+					<li>002</li>
+					<li>003</li>
+				</ul>
+			</li>
+			<li class="cont-sub"><span>交流区</span>
+				<ul class="aa">
+					<li>100</li>
+					<li>200</li>
+					<li>300</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script>
+		//     function getClass(clsName,context){
+		// 	var result = [];
+		// 	if(context==undefined){
+		// 		var arr = document.getElementsByTagName("*");
+		// 	}else{
+		// 		var arr = context.getElementsByTagName("*");
+		// 	}
+		// 	//或者 context=context||document;
+		// 	//var arr = context.getDocumentElementsByTagName("*")
+			
+		// 	for (var i=0;i<arr.length;i++){
+		// 		if(arr[i].className == clsName){
+		// 			//(arr[i].className.indexOf(clsName)!=-1)
+		// 			result.push(arr[i]);
+		// 		}
+		// 	}
+		// 	return result;
+		// }
+		var aUl=document.getElementsByTagName("span");
+		// var result=[];
+		for (var i=0;i<aUl.length;i++){
+			aUl[i].onclick = function(){
+				
+			}
+		// 	result.push(aUl[i]);
+		}
+		var arr = control.getElementsByTagName("ul");
+		// var ff=[];
+		// for (var i=0;i<arr.length;i++){
+		// 	ff.push(arr[i]);
+		// }
+		for (i=0;i<2;i++){
+			aUl[i].onclick = function(){
+				var oUl=control.getElementsByTagName("ul")[i];
+				if (oUl.style.display=="none" || oUl.style.display==""){
+					oUl.style.display="block";
+				}else{
+					oUl.style.display="none";
+				}
+			}
+		}
+
+
+
+
+
+
+
+		// var oMenu = document.getElementById("control")
+		// var aLi=getClass("cont-sub",oMenu);
+		// for (var i=0;i<aLi.length;i++){
+		// 	aLi[i].onclick = function(){
+		// 		var oUl=this.getElementsByTagName("ul")[0];
+		// 		if (oUl.style.display=="none" || oUl.style.display==""){
+		// 			oUl.style.display="block";
+		// 		}else{
+		// 			oUl.style.display="none";
+		// 		}
+		// 	}
+		// }
+
+	</script>
+</body>
+</html>

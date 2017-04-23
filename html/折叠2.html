@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jklhj</title>
+</head>
+<body>
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>折叠</title>
+	<link rel="stylesheet" href="折叠.css">
+</head>
+<body>
+	<div>
+		<ul id="control">
+			<li class="cont-sub"><span>管理区</span>
+				<ul class="aa">
+					<li>001</li>
+					<li>002</li>
+					<li>003</li>
+				</ul>
+			</li>
+			<li class="cont-sub"><span>交流区</span>
+				<ul class="aa">
+					<li>100</li>
+					<li>200</li>
+					<li>300</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	<script>
+	var aSpan = document.getElementsByTagName("span"),
+		aMenu = document.getElementById("control"),
+	    aUl = aMenu.getElementsByTagName("ul");
+	    for (var i=0;i<aSpan.length;i++){
+	    	aSpan[i].num = i;
+	    	aSpan[i].onclick = function(){
+	    		if(aUl[this.num].style.display=="none"||aUl[this.num].style.display==""){
+	    			aUl[this.num].style.display="block";
+	    		}else{
+	    			aUl[this.num].style.display="none";
+	    		}
+	    	}
+	    }
+	</script>
+</body>
+</html>
