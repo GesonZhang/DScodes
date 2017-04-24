@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>下拉选项卡</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        ol,ul{
+            list-style: none;
+        }
+        .select-box{
+            position: relative;
+            background-color: #e8e8e8;
+            width:200px;
+            margin:30px;
+        }
+        .select-box.selected{
+            color: #fff;
+            box-shadow:0px 4px 4px 0px rgba(0,0,0,0.15) inset;
+        }
+        .sel-btn{
+            height: 30px;
+            line-height: 30px;
+            /*background-color: #e8e8e8;*/
+            padding: 0 10px;
+            position: relative;
+        }
+        .sel-btn p{
+            overflow: hidden;
+
+        }
+        .sel-btn span{
+            border: 4px solid transparent;
+            border-top:4px solid #747474;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            margin-top: -2px;
+        }
+        .select-box .sel-menu{
+            background: #fff;
+            border:1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            padding: 5px 0;
+            position: absolute;
+            left:0;
+            top:35px;
+            z-index:1;
+            display: none;
+        }
+        .sel-menu li{
+            line-height: 26px;
+            padding: 0 20px;
+            color: #333333;
+            width: 187px;
+        }
+        .sel-menu li:hover{
+            background:#0081c2;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="select-box" class="select-box">
+        <div class="sel-btn">
+            <p>Option</p>
+            <span></span>
+        </div>
+        <ul class="sel-menu">
+            <li>选项一</li>
+            <li>选项二</li>
+            <li>选项三</li>
+        </ul>
+        <!--<script src="js/commen.js"></script>-->
+
+        <script>
+            function getClass(clsName,context){
+                var result = [];
+                context=context||document;
+                var arr = context.getElementsByTagName('*');
+                for (var i=0;i<arr.length;i++){
+                    if(arr[i].className.indexOf(clsName)!=-1){
+                        //(arr[i].className.indexOf(clsName)!=-1)
+                        result.push(arr[i]);
+                    }
+                }
+                return result;
+            }
+            var oSelBox = document.getElementById('select-box'),
+                oSelBtn =getClass('sel-btn')[0],
+                oUl = getClass('sel-menu')[0],
+                oLi =  oUl.getElementsByTagName('li'),
+                oP = oSelBox.getElementsByTagName('p')[0],
+                oSpan = oSelBox.getElementsByTagName('span')[0];
+                oSelBtn.onmousedown =function(){
+                    oSelBox.className = 'select-box selected';
+                }
+                oSelBtn.onmouseup = function(){
+                    oSelBox.className = 'select-box';
+                    if( oUl.style.display =='none'|| oUl.style.display == ''){
+                        oUl.style.display = 'block';
+                    }else {
+                        oUl.style.display = 'none'
+                    }
+                }
+            for (var i= 0;i<oLi.length;i++){
+                    oLi[i].onclick = function(){
+                        oP.innerHTML = this.innerHTML;
+                        oUl.style.display = 'none';
+                    }
+            }
+            document.onclick = function(e){
+                var target = e.target||event.ercElement;
+                if( target!=oSelBox &&target!= oP &&target!= oSpan ){
+                    oUl.style.display = 'none';
+                }
+            }
+        </script>
+    </div>
+</body>
+</html>
