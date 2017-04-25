@@ -17,10 +17,10 @@ var oTipsBox = document.getElementById('tips-box'),
     oSelect = document.getElementById('select'),
     aInner = getClass('inner-box'),
     aName = oSelect.getElementsByTagName('li');
-    for (var i=0;i<aName.length;i++ ){
-        aName[i].num =i;
-        aName[i].onclick = function(){
-            for(var j=0;j<aName.length;j++){
+    for (var i=0;i<aName.length;i++ ) {
+        aName[i].num = i;
+        aName[i].onclick = function () {
+            for (var j = 0; j < aName.length; j++) {
                 aInner[j].style.display = 'none';
                 aName[j].className = '';
             }
