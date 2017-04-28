@@ -36,6 +36,9 @@
             float:left;
             line-height: 50px;
             margin-left: 50px;
+            padding:0 30px;
+            cursor: pointer;
+            /*background-color: greenyellow;*/
         }
         #pic-box{
             width:960px;
@@ -57,6 +60,41 @@
         }
         p {
             line-height: 30px;
+        }
+        #bk{
+            position:fixed;
+            left:0;
+            right:0;
+            top:0;
+            bottom:0;
+            background-color: rgba(0,0,0,0.5);
+            display:none;
+        }
+        #content{
+            position:relative;
+        }
+        #content img{
+            width:960px;
+            height:600px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 50px;
+            display: block;
+        }
+
+        #content span{
+            top:50%;
+            position:absolute;
+            font-size: 80px;
+            font-weight: 600;
+            color:lightgray;
+            /*display:none;*/
+        }
+        #content .pre{
+            left:195px;
+        }
+        #content .next{
+            right:195px;
         }
     </style>
 </head>
@@ -84,12 +122,64 @@
     <div id="gotop">
         <p>返回顶部</p>
     </div>
+    <div id="bk">
+        <div id="content">
+            <img src="../img/caihongma.jpg" alt="">
+            <span class="pre">&lt</span>
+            <span class="next">&gt</span>
+        </div>
+    </div>
     <script>
-
+        function getClass(clsName,context){
+            var result = [];
+            context=context||document;
+            var arr = context.getElementsByTagName('*');
+            for (var i=0;i<arr.length;i++){
+                if(arr[i].className.indexOf(clsName)!=-1){
+                    //(arr[i].className.indexOf(clsName)!=-1)
+                    result.push(arr[i]);
+                }
+            }
+            return result;
+        }
 
         var oGoTop = document.getElementById('gotop');
 //        var iScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 //        console.log(iScrollTop);
+        var oNav = document.getElementById('nav');
+        //将NAV距离浏览器顶端距离取在全局，这样不会随着滚动条改变而改变offsetTop的值
+        var iTop = oNav.offsetTop;
+        var bFixed = false;//用来判断是否定位的初始值，用Boolean来控制事件执行的次数
+        var aLi = document.getElementsByTagName('li');
+        var oBk = document.getElementById('bk');
+        var oImg = oBk.getElementsByTagName('img')[0];
+        var oPre = getClass('pre')[0];
+        var oNext = getClass('next')[0];
+        for(var i = 0;i<aLi.length;i++){
+            aLi[i].onclick = function(){
+                oBk.style.display = 'block';
+            }
+        }
+
+        window.onscroll = function(){
+            var iScrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            if(iScrollTop >= iTop && !bFixed ){
+                oNav.style.position = 'fixed';
+                oNav.style.top = 0;
+                oNav.style.left = '195px';
+                bFixed = true;
+                //但是只要超过header距离，只要onscroll事件滚动都会进到if里面，代码执行
+            }else{
+                if(iScrollTop < iTop){
+                    oNav.style.position = 'static';
+                    bFixed = false;
+
+                }
+            }
+
+        }
+
+
 
         oGoTop.onclick = function () {
             var timer;
