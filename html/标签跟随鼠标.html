@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>mouse-tips</title>
+	<style>
+		p{
+			margin-left: 50px;
+			margin-top: 100px;
+		}
+		.tip{
+			border:1px solid white;
+			position:absolute;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+	<p><a href="#" class="tooltip" title="我是第一个标签啦啦啦">提示一*TAGONE</a></p>
+	<p><a href="#" class="tooltip" title="我是第二个标签biubiubiu">提示二*TAGTWO</a></p>
+
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$('.tooltip').on('mouseover',function(e){ //要传参，鼠标距离e.clentX,jq中e.pageX
+			var $tip = $('<span class="tip">'+this.title+'</span>') //创建一个span标签，可以直接$,在span中插入字符串，鼠标划入title中的内容；
+						.css({
+							left:e.pageX+16,
+							top:e.pageY+16
+
+						});
+						this.title = ''; //将title中的默认内容清空；
+						$('body').append($tip);
+		});
+		$('.tooltip').on('mouseout',function(e){
+			this.title = $('.tip').html(); //鼠标移走时，将存在tip中的内容还给title
+			$('.tip').remove();
+		});
+		$('.tooltip').on('mousemove',function(e){
+			$('.tip').css({
+					left:e.pageX+16,
+					top:e.pageY+16
+			});
+		});
+	</script>
+</body>
+</html>
