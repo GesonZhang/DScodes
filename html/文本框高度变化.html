@@ -31,6 +31,13 @@
 				},500);
 			}
 		})
+        $('.smaller').on('click',function(){
+            if($comment.height()>100 && !$comment.is(':animated')){
+                $comment.animate({
+                    height:'-=50'
+                },500);
+            }
+        })
 	</script>
 </body>
 </html>
