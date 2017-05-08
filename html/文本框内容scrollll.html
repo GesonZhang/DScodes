@@ -27,11 +27,17 @@
 	<script>
 		var $comment = $('#comment');
 		$('.down').on('click',function(){
-			$comment.animate({
-				scrollTop:'+=50'
-			});
-		});
+                $comment.animate({
+                    scrollTop:'+=50'
+                });
 
+		});
+        $('.upto').on('click',function(){
+            $comment.animate({
+                scrollTop:'-=50'
+            });
+
+        });
 	</script>
 </body>
 </html>
