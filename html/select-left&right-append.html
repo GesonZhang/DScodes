@@ -55,6 +55,18 @@
 		$('#select1').on('dblclick',function(){
 			$('#select1 :selected').appendTo('#select2').removeProp('selected');
 		});
+        $('#add_all').on('click',function(){
+            $('#select1 option').appendTo('#select2');
+        });
+        $('#remove').on('click',function(){
+            $('#select2 :selected').appendTo('#select1').removeProp('selected');
+        });
+        $('#select2').on('dblclick',function(){
+            $('#select2 :selected').appendTo('#select1').removeProp('selected');
+        });
+        $('#remove_all').on('click',function(){
+            $('#select2 option').appendTo('#select1');
+        });
 	</script>
 </body>
 </html>
