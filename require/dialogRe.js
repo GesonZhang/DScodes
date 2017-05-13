@@ -14,6 +14,7 @@ define(['requery'],function($){
 				height:300,
 				opacity:0.5,
 				title:'标题'
+
 			}；
 		option = $.extend(defauleVal,option);
 		this.$dialogBox = $('<div class="dialog-box"></div>').ccss('background','rgba(0,0,0,'+option.opacity+')');
@@ -25,15 +26,15 @@ define(['requery'],function($){
 			});
 		this.$dialogTitle = $('<div class="dialog-title"></div>');
 		this.$dialogText = $('<span class="title">'+option.title+'</span>');
-		this.$dialogClose = $('<span class="dialog-close">X</span>');
+		this.$dialogClose = $('<span class="dialog-close">X</span>').on('click',function(){
+            _this.close();
+		});
 		this.$dialogBody = $('<div class="dialog-body"></div>').html($(option.content).clone().show());
 		this.dialogBox.append(this.$content);
 		this.$content.append(this.$dialogTitle).append(this.$dialogBody);
 		this.$dialogTitle.append(this.$dialogText).append(this.$dialogClose);
 		$('body').append(this.$dialogBox);
-        this.$dialogClose.on('click',function(){
-        	_this.close();
-        });
+
 
 
 		}
@@ -42,3 +43,47 @@ define(['requery'],function($){
 		}
 	}
 })
+//分割线，下面为最终版本
+//封装类！
+requirejs.config({
+    baseUrl:'jquery/',
+    paths:{
+        jquery:"jquery-1.12.4"
+    }
+});
+define(['requery'],function($){
+	function Dialog(option){
+        var _this = this;
+        var defauleVal = {
+            width:400,
+            height:300,
+            opacity:0.5,
+            title:'标题',
+			content:''
+
+        }；
+		option = $.extend(defauleVal,option);
+        this.$dialogBox = $('<div class="dialog-box"></div>').ccss('background','rgba(0,0,0,'+option.opacity+')');
+        this.$content = $('<div class="content"></div>').css({
+            width:option.width,
+            height:option.height,
+            marginLeft:-option.width/2,
+            marginRight:-option.height/2
+        });
+        this.$dialogTitle = $('<div class="dialog-title"></div>');
+        this.$dialogText = $('<span class="title">'+option.title+'</span>');
+        this.$dialogClose = $('<span class="dialog-close">X</span>').on('click',function(){
+            _this.close();
+        });
+        this.$dialogBody = $('<div class="dialog-body"></div>').html($(option.content).clone().show());
+	}
+	Dialog.prototype.open = function(){
+        this.dialogBox.append(this.$content);
+        this.$content.append(this.$dialogTitle).append(this.$dialogBody);
+        this.$dialogTitle.append(this.$dialogText).append(this.$dialogClose);
+        $('body').append(this.$dialogBox);
+    }
+    Dialog.prototype.close = function(){
+        this.$dialogBox.remove();
+	}
+}
