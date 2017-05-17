@@ -35,6 +35,7 @@
 		Leaf.prototype.fall = function(){
 			var _this = this;
 			setTimeout(function(){
+			    clearInterval(_this.timer);
 				_this.timer = setInterval(function(){
 					if(_this.img.offsetTop > screenHeight - _this.width){
 						clearInterval(_this.timer);
