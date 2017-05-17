@@ -23,5 +23,6 @@ define(['jquery','dialogRe'],function($,Dialog){
     });
         dialog2.open();
 	})
+
 })
 

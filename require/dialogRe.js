@@ -86,4 +86,5 @@ define(['requery'],function($){
     Dialog.prototype.close = function(){
         this.$dialogBox.remove();
 	}
+	return Dialog;
 }
