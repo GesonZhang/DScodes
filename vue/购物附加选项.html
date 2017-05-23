@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物附加选项</title>
+</head>
+<body>
+    <div id="app">
+        <div><h1 style="color:deepskyblue">大胜夜总会欢迎您</h1></div>
+        是否需要额外付费项目
+        <input type="checkbox"  @click="select">
+        <ul>
+            <li v-for="obj in arr">
+                {{obj.name}}&nbsp(￥{{obj.price}})
+                <input type="checkbox" v-model="erwai" :value="obj">
+            </li>
+        </ul>
+        订单费用信息
+        <ul>
+            <li v-for="obj in erwai">
+                {{obj.name}} (￥{{obj.price}})
+            </li>
+        </ul>
+        总价 ￥{{total}}
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                arr:[],
+                erwai:[{name:'包夜费用',price:'666'}]
+            },
+            methods:{
+                select:function(){
+                  if(event.target.checked){
+                      this.arr = [{name:'安全套',price:'39'},
+                                  {name:'精油',price:'198'},
+                                  {name:'润滑油',price:'99'},
+                                  {name:'香薰',price:'68'},
+                                  {name:'沐浴套装',price:'79'},
+                                  {name:'wifi',price:'25'}
+
+                      ]}else{
+                      this.arr.splice(0);
+                      this.erwai.splice(1)
+                  }
+                }
+            },
+            computed:{
+                total:function(){
+                    var num = 0;
+                    this.erwai.forEach(function(val){
+                         num += parseInt(val.price) ;
+                    })
+                    return num;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
