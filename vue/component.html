@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <demo my-msg="我是谁"></demo>
+    <demo msg2="我是2">
+        <p slot="title" style="color:palevioletred">我是标题</p>
+    </demo>
+</div>
+<script src="vue.js"></script>
+<script type="text/x-template" id="temp">
+    <div>
+        <h1>asdjkasd{{myMsg}}sdfds</h1>
+        <slot name="title">
+            当没有标题传入时显示
+        </slot>
+        <div>
+            <h2>sjfdskjfl;kdl{{msg2}}</h2>
+        </div>
+    </div>
+</script>
+<script>
+//    Vue.component('demo',{  //定义在全局
+//        template:'<h1> adsa ass d as</h1>'
+//    });
+    new Vue({
+        el:'#app',
+    components:{ //局部
+            demo:{
+                template:'#temp',
+                props:['myMsg','msg2']
+            }
+        }
+    });
+
+</script>
+</body>
+</html>
