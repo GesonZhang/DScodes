@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转照片</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            background: #333333;
+        }
+        #stage{
+            width: 1000px;
+            height: 1000px;
+            /*background: #cccccc;*/
+            margin:80px auto;
+            /*box-shadow:0 0 3px 3px rgba(0,0,0,0.5);*/
+            -webkit-perspective: 800px;
+            -webkit-perspective-origin: center -20%;
+            overflow: hidden;
+            /*解决外边距合并问题*/
+        }
+        #container {
+            width: 290px;
+            height: 163px;
+            margin: 100px auto;
+            position: relative;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transition:transform 2s ease;
+
+        }
+        #container img{
+            width: 200px;
+            height: 120px;
+            position: absolute;
+            left:0;
+            top:0;
+            /*-webkit-transition:transform 2s ease;*/
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="stage">
+        <div id="container">
+
+        </div>
+    </div>
+    <script>
+        var oContainer = document.getElementById('container');
+        var x = 100/Math.tan(20*(Math.PI/180)) +20;
+        var count = 0;
+//        var html='';
+//        for(var i=0;i<9;i++){
+//            html+= '<img src="img/'+(i+1)+'.jpg"/>'
+//        }
+//        oCantainer.innerHTML = html;
+//        var aImg = document.getElementsByTagName('img');
+//        for(i=aImg.length-1;i>=0;i--){
+//            aImg[i].style.WebkitTransform = 'rotateY('+(-i*40)+'deg) translateZ('+x+'px)';
+//        }
+        for(var i=0; i<9; i++){
+             var oImg = new Image();
+            oImg.onload = function(){
+                count++;
+                if(count==9){
+                    var aImg = oContainer.getElementsByTagName('img');
+                    var time = 900;
+                    for(var i=0;i<9;i++){
+                        time-=100;
+                        aImg[i].style.WebkitTransition = 'transform 1.5s ease-out '+time+'ms';
+                        aImg[i].style.WebkitTransform = 'rotateY('+(-i*40)+'deg) translateZ('+x+'px)';
+
+                    }
+                }
+            }
+             oImg.src = 'img/'+(i+1)+'.jpg';
+            oContainer.appendChild(oImg);
+        }
+        var num =0;
+        oContainer.onclick = function(){
+                num++;
+                this.style.transform = 'rotateY('+num*40+'deg)';
+
+        }
+    </script>
+</body>
+</html>
