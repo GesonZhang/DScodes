@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片立方体</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            width:100%;
+            height:1000px;
+            background: #000000;
+            -webkit-perspective: 800px;
+        }
+        #box{
+            width: 300px;
+            height: 300px;
+            margin:100px auto;
+            position: relative;
+            -webkit-animation: run 2s linear infinite;
+            -webkit-transform-style: preserve-3d;
+
+        }
+        #box div{
+            height: 300px;
+            width: 300px;
+            position:absolute;
+            top: 0;
+            left:0px;
+        }
+        @-webkit-keyframes run {
+            100%{
+                -webkit-transform:rotateY(360deg);
+            }
+        }
+        #box img{
+            width:100%;
+            height:100%;
+            border:4px solid #e8e8e8;
+            border-radius: 10px;
+        }
+        #one{
+            -webkit-transform: rotateX(90deg) translateZ(150px);
+        }
+        #two{
+            -webkit-transform: translateZ(150px);
+        }
+        #three{
+            -webkit-transform: rotateY(90deg) translateZ(150px);
+        }
+        #four{
+            -webkit-transform: rotateY(180deg) translateZ(150px);
+        }
+        #five{
+            -webkit-transform: rotateY(-90deg) translateZ(150px);
+        }
+        #six{
+            -webkit-transform: rotateX(-90deg) translateZ(150px);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="one">
+            <img src="旋转照片/img/1.jpg" alt="">
+        </div>
+        <div id="two">
+            <img src="旋转照片/img/2.jpg" alt="">
+
+        </div>
+        <div id="three">
+            <img src="旋转照片/img/3.jpg" alt="">
+
+        </div>
+        <div id="four">
+            <img src="旋转照片/img/4.jpg" alt="">
+
+        </div>
+        <div id="five">
+            <img src="旋转照片/img/5.jpg" alt="">
+
+        </div>
+        <div id="six">
+            <img src="旋转照片/img/6.jpg" alt="">
+
+        </div>
+        
+    </div>
+</body>
+</html>
