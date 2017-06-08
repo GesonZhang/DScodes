@@ -50,7 +50,8 @@
         #footer {
             clear: both;
         }
-        @media(max-width: 959px){
+        @media screen and (max-width: 960px){
+            /*最大是960，小于960时候执行里面样式改变*/
             h3{
                 width:100%;
             }
@@ -71,7 +72,7 @@
                 max-width: 100%;
                 /*max-width???*/
             }
-        @media(max-width: 480px){
+        @media screen and (max-width: 480px){
             #content{
                 width: 100%;
             }
@@ -90,6 +91,7 @@
         <img src="img/01.jpg" alt="">
     </div>
     <div id="content">
+        <!--弹性盒模型？？？-->
         <div id="left">
             <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sem erat, egestas quis luctus ut, rhoncus vitae risus. Integer venenatis libero sit amet sapien dictum, quis bibendum mi volutpat. Cras pretium quam quis magna facilisis, eget feugiat nisi lacinia.
@@ -102,3 +104,7 @@
     <h3 id="footer">页脚</h3>
 </body>
 </html>
+<!--多行元素垂直居中
+父元素 display table
+子元素 display table-cell
+      vertical-align: middle;
