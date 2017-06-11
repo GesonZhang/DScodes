@@ -1,0 +1,545 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration:none;
+    out-line: none;
+    color:#b89f7a;
+}
+#nav{
+    display: -webkit-box;
+    /*弹性盒模型*/
+    height: 100px;
+    width: 100%;
+    border-top:3px solid #f5f5f5;
+    border-bottom:1px solid #ddd;
+    background: #fff;
+}
+#menu{
+    -webkit-box-flex: 5;
+}
+#menu .menu-items{
+    padding:30px 0 0 37px;
+
+}
+#menu img{
+    display: block;
+}
+#menu span{
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    margin-left: 2px;
+}
+#logo{
+    -webkit-box-flex: 2;
+    text-align: center;
+    padding:15px 0;
+}
+#logo img{
+    width: 73px;
+}
+#login{
+    -webkit-box-flex: 5;
+    text-align: right;
+    color: #4e4e4e;
+    font-size: 16px;
+    width: 0;
+}
+#login .log-items{
+    padding-right: 30px;
+    padding-top: 20px;
+}
+#login a{
+    color:#b89f7a;
+    font-weight: 700;
+    font-size: 14px;
+}
+#carousel-generic{
+    width: 100%;
+    padding-top: 50%;
+    background: url("img/1.jpg") 0 0 no-repeat;
+    background-size: cover;
+    position: relative;
+}
+#carousel-generic .know-more{
+    position: absolute;
+    width: 200px;
+    height: 53px;
+    left:50%;
+    bottom: 1%;
+    margin-left: 8%;
+}
+.know-more span{
+    display: inline-block;
+    width: 108px;
+    height: 52px;
+    background:#b89f7a;
+    color: #fff;
+    font-weight: 400;
+    margin:0 auto;
+    line-height: 52px;
+    text-align: center;
+}
+.rewards-mark p{
+    font-size: 18px;
+    color: #fff;
+    /*margin-top: 70px;*/
+}
+#home-rewards{
+    width:100%;
+    background:#0F0F0F;
+    /*height: 300px;*/
+
+}
+#home-rewards .container{
+    /*overflow: hidden;*/
+    width: 970px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: table;
+
+}
+.rewards-mark{
+    background: url("img/rewards_bg.png") 0 0 no-repeat;
+    height: 220px;
+    width: 260px;
+    padding-left: 90px;
+
+    display: table-cell;
+    vertical-align: middle;
+    /*float: left;*/
+    /*display: inline-block;*/
+    /*text-align: center;*/
+
+
+}
+
+.rewards-mark p{
+    color:#fff;
+    font-size: 18px;
+    /*padding-top: 80px;*/
+}
+.rewards-card{
+    background:url("img/rewards_logo_20170209.svg") 0 0 no-repeat;
+    background-size: contain;
+    width: 160px;
+    height: 38.52px;
+}
+.rewards-content{
+    /*float: right;*/
+    text-align: left;
+    width: 430px;
+    height: 220px;
+    display: table-cell;
+    vertical-align: middle;
+}
+.rewards-content p{
+    color: #fff;
+    line-height: 28px;
+}
+.rewards-content .bg-word{
+    font-size: 25px;
+    font-weight: 400;
+}
+.rewards-content .tiny-word{
+    font-size: 16px;
+}
+.rewards-content .rewards-link{
+    display: inline-block;
+    width: 114px;
+    height: 50px;
+    border:2px solid #b89f7a;
+    margin:7px 14px 7px 0;
+    text-align: center;
+    line-height: 50px;
+    color:#b89f7a;
+}
+.rewards-content i,#app i{
+    color:#b89f7a;
+    font-size: 16px;
+}
+#ad{
+    background: url("img/2.jpg") 0 0 no-repeat;
+    width: 100%;
+    padding-top:23%;
+    background-size: cover;
+}
+#app{
+    background: url("img/app_bg.gif") 0 center repeat;
+    width: 100%;
+}
+.app1{
+    overflow: hidden;
+    /*display:none;*/
+}
+.app-device{
+    width:35%;
+    height: 215px;
+    background: url("img/app_device.png") center 10px no-repeat;
+    background-size: contain;
+    float: left;
+
+}
+.app-download{
+    width:20%;
+    float: left;
+    margin-top: 35px;
+    text-align: center;
+}
+.app-download img{
+    width: 135px;
+    height: 135px;
+}
+.app-content{
+    padding-left: 10px;
+    width:45%;
+    float: left;
+    margin-top: 71px;
+    box-sizing: border-box;
+}
+#app1 .app-content p{
+    color: #3d3d3d;
+    font-size: 25px;
+}
+.app2 {
+    width: 100%;
+    display:none;
+    /*overflow: hidden;*/
+}
+.app2-container{
+    width:100%;
+    padding:0 35px;
+    overflow: hidden;
+    box-sizing: border-box;
+    text-align: center;
+}
+.app2-container p{
+    margin:25px;
+    font-size: 18px;
+    /*box-sizing: border-box;*/
+}
+
+.app2 .app-device{
+    width:50%;
+    float: left;
+    height: 180px;
+}
+.download-btn{
+    float: left;
+    width:50%;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+.app2 .btn-bg{
+    height: 52px;
+    width:100%;
+    display:block;
+    background: url("img/udp-starbucks-cn.svg") center center no-repeat;
+    background-size:60%;
+    margin-top:52px;
+    /*margin:0 auto;*/
+
+}
+/*mosaic开始*/
+#mosaic{
+    overflow: hidden;
+}
+#mosaic .mosaic-con{
+    /*display: inline-block;*/
+    width: 50%;
+    float: left;
+    padding-top: 50%;
+    position: relative;
+}
+/*#mosaic{*/
+    /*position: relative;*/
+/*}*/
+#mosaic .left{
+    background: url("img/tmall-cn.jpg") 0 0 no-repeat;
+    background-size: contain;
+}
+#mosaic .right{
+    background: url("img/lengcui.jpg") 0 0 no-repeat;
+    background-size: contain;
+}
+.mos-content{
+    position:absolute;
+    text-align: center;
+    bottom:20px;
+    left: 36%;
+
+}
+.mos-content h2{
+    color:#fff;
+}
+/*.mos-content div{*/
+    /*-webkit-box-flex: 5;*/
+    /*!*display: inline-block;*!*/
+    /*text-align: center;*/
+/*}*/
+
+/*say-it开始*/
+#say-it{
+    width: 100%;
+    background:#106e4b;
+}
+#say-it .container{
+    padding:15px 0;
+    margin: 0 86.5px;
+    overflow: hidden;
+    text-align: center;
+    /*display: table;*/
+}
+#say-it .say-it-logo1{
+    width:383.5px;
+    height: 150px;
+    display: inline-block;
+    box-sizing: border-box;
+
+    /*display: table-cell;*/
+    /*text-align: center;*/
+    /*vertical-align: middle;*/
+}
+#say-it .say-it-logo2{
+    width:383.5px;
+    height: 162px;
+    display: inline-block;
+    box-sizing: border-box;
+
+
+    /*float: left;*/
+    /*display: table-cell;*/
+    /*text-align: center;*/
+    /*vertical-align: middle;*/
+
+}
+#say-it .img-one,#say-it .img-two,#say-it .img-three,#say-it .img-four{
+    display: inline-block;
+    background-size:contain ;
+    box-sizing: border-box;
+}
+.img-one{
+    width:177px;
+    height: 125px;
+    margin:auto 22px;
+    background: url("img/wsg-title.png") center center no-repeat;
+
+    
+}
+.img-two{
+    width: 106px;
+    height: 150px;
+    margin:auto 25px;
+    background: url("img/wsg-qrcode.png") center center no-repeat;
+
+}
+.img-three{
+    width: 98px;
+    height: 162px;
+    margin:auto 25px;
+    background: url("img/wsg-cup.png") center center no-repeat;
+
+}
+.img-four{
+    width: 184px;
+    height: 142px;
+    margin:auto 22px;
+    background: url("img/wsg-wording.png") center center no-repeat;
+
+}
+/*collection开始*/
+#collection{
+    width: 100%;
+    text-align: center;
+    padding:80px 16px;
+    box-sizing: border-box;
+
+
+}
+#collection h2{
+    margin:20px auto;
+    font-size: 30px;
+    color:#3d3d3d;
+
+}
+#collection h4{
+    margin-bottom: 80px;
+    flex-shrink: 18px;
+    color: #8B8B8B;
+}
+#collection .items{
+    display: inline-block;
+    width: 240px;
+    height: 280px;
+    margin:15px;
+    box-shadow: 0 0 2px #ccc;
+}
+#collection .items-img{
+    width: 240px;
+    height: 160px;
+}
+.items b{
+    display: block;
+    font-size: 18px;
+    margin-top: 15px;
+    color: #000;
+}
+.items p{
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #000;
+}
+.collect1{
+    background: url("img/1@2x.png") 0 0 no-repeat;
+    background-size: contain;
+}
+.collect2{
+    background: url("img/2@2x.png") 0 0 no-repeat;
+    background-size: contain;
+}
+.collect3{
+    background: url("img/3@2x.png") 0 0 no-repeat;
+    background-size: contain;
+}
+.collect4{
+    background: url("img/4@2x.png") 0 0 no-repeat;
+    background-size: contain;
+}
+
+@media screen and (max-width: 991px){
+    #carousel-generic {
+        background-image: url("img/1_c.jpg");
+        padding-top: 117%;
+    }
+    #carousel-generic .know-more{
+        bottom: 65px;
+        left: auto;
+        margin: 0px;
+        right: 15px;
+        top: auto;
+        width: auto;
+    }
+    #home-rewards .container{
+        width: 750px;
+    }
+}
+@media screen and (max-width: 767px){
+    #menu .menu-items{
+        padding-left: 15px;
+    }
+    #login{
+        font-size: 12px;
+    }
+    #login .log-items{
+        padding-right: 10px;
+
+    }
+
+    #home-rewards .container{
+        width:auto;
+        padding-left: 35px;
+        padding-right: 35px;
+        height: 490px;
+        display: block;
+    }
+    .rewards-mark{
+        width: auto;
+        display: block;
+        padding-left: 0;
+        height: 70px;
+        text-align: center;
+        padding: 55px;
+    }
+    .rewards-card{
+        width: 100%;
+        background:url("img/rewards_logo_20170209.svg") 50% 0 no-repeat;
+        background-size: contain;
+    }
+    .rewards-content{
+        width:auto;
+        display: block;
+        padding-left: 0;
+        height: 70px;
+        text-align: center;
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+    .rewards-content .rewards-link {
+        display: block;
+        width: 80%;
+        margin: 7px auto;
+        padding: 14px auto;
+    }
+    .app1{
+        display: none;
+    }
+    .app2{
+        display: block;
+    }
+
+    #mosaic .mosaic-con{
+        width: 100%;
+        float: none;
+        padding-top: 100%;
+        /*position: relative;*/
+    }
+
+
+    .img-one{
+        width:150px;
+        height: 162px;
+        margin:0;
+        background-image: url("img/wsg-cup.png");
+
+
+    }
+    .img-two{
+        width: 150px;
+        height: 76px;
+        margin:0;
+        background-image: url("img/wsg-title.png");
+
+    }
+    .img-three{
+        width: 120px;
+        height: 120px;
+        margin:0;
+        background-image: url("img/wsg-qrcode.png");
+
+    }
+    .img-four{
+        width: 180px;
+        height: 91px;
+        margin:0;
+        background-image: url("img/wsg-wording.png");
+
+    }
+
+}
+@media screen and (max-width:667px){
+    #collection .items {
+        display: inline-block;
+        width: 136px;
+        height: 220px;
+        margin: 10px 0;
+        /*background-size: cover;*/
+
+        /*box-shadow: 0 2px 4px #ccc;*/
+    }
+    #collection .items-img{
+        width: 137px;
+        height: 86px;
+    }
+}
+@media screen and (max-width:639px){
+    #ad{
+        background-image: url("img/dd-mobile-bg.jpg");
+        /*background-size: contain;*/
+        padding-top: 117%;
+    }
+}
+/*max-width 小于等于 包含这个数值*/
