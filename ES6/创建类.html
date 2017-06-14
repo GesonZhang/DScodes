@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类</title>
+</head>
+<body>
+<script>
+    class Cat{
+        constructor(name){
+            this.name = name;
+        }
+        say(){
+            console.log(this.name);
+        }
+    }
+    var c = new Cat('mimi');
+    c.say();
+
+    class BsCat extends Cat{
+        constructor(name,age){
+            super(name);
+            this.age = age;
+        }
+        eat(){
+            console.log('eating');
+        }
+    }
+    var bsc = new BsCat('bsmimi',5);
+    bsc.say();
+    bsc.eat();
+
+</script>
+</body>
+</html>
