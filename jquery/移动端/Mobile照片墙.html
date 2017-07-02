@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body,html{
+            background: #000;
+            width: 100%;
+            height: 100%;
+        }
+        #container img{
+            display: block;
+            float: left;
+            width: 25%;
+            box-sizing: border-box;
+            border:1px solid #000;
+        }
+        #big-img{
+            position: absolute;
+            width:100%;
+            height: 100%;
+            background:#FF6500;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+    </div>
+    <div id="big-img">
+
+    </div>
+<script src="../jquery/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script>
+        var html='';
+        var $container = $('#container');
+        var $bigImg = $('#big-img');
+        for (var i=0;i<24;i++){
+            html+= '<img src="img/thumbs/'+(i+1)+'.jpg"/>'
+        }
+
+        $container.html(html);
+
+        $('#container img').on('tap',function(){
+            $container.hide();
+            $bigImg.show();
+        })
+
+
+
+
+
+
+
+
+
+
+//        $(document).on("pageinit","#img-box",function(){
+//            for(var i=0;i<6;i++){
+//                for(var j=0;j<4;j++){
+//                   var oImg =$('<p></p>');
+//
+//                   idx++;
+//                    $('#img-box').append(oImg);
+//                }
+//
+//            }
+//            $('#img-one').append(oImg);
+//
+//
+//        });
+
+
+
+    </script>
+</body>
+</html>

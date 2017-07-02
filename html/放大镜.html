@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>放大镜</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        html,body{
+            width:100%;
+            height:100%;
+        }
+        img{
+            border:0;
+        }
+        #box{
+            width: 480px;
+            height: 300px;
+            margin:20px;
+            position:relative;
+            float: left;
+        }
+        #box img{
+            width:480px;
+            height: 300px;
+        }
+        #mark{
+            width: 96px;
+            height:60px;
+            position:absolute;
+            left:0;
+            top:0;
+            background: #000000;
+            opacity:0.5;
+            filter:alpha(opacity:50);
+            display: none;
+        }
+        #bg-pic{
+            width:480px;
+            height: 300px;
+            overflow: hidden;
+            float: left;
+            margin: 20px;
+        }
+        #bg-pic img{
+            width: 960px;
+            height: 600px;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <img src="../img/caihongma.jpg" alt="">
+        <div id="mark"></div>
+    </div>
+    <div id="bg-pic">
+        <img src="../img/caihongma.jpg" alt="">
+    </div>
+    <script>
+        var oBox = document.getElementById('box'),
+            oMark = document.getElementById('mark');
+        oBox.onmouseenter = function(){
+            oMark.style.display = 'block';
+        }
+        oBox.onmousemove = function(e){
+            var left = e.clintX+48+'px';
+            var top = e.clintY+30+'px';
+            oMark.style.left = left;
+            oMark.style.top = top;
+        }
+    </script>
+</body>
+</html>

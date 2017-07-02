@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        .red{
+            color:red;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
         <input type="text" v-model="aa" @keyup="filter"><button @click="add">add</button>
         <ul>
-            <li v-for="ite in showItems">{{ite}}</li>
+            <li v-for="ite in showItems" :class = "{red:items.active}" @click ="items.active=!items.active">{{ite.val}}</li>
         </ul>
     </div>
 
@@ -20,23 +25,24 @@
             data:{
                 aa:'',
                 items:[],
-                showItems:[]
+                showItems:[],
+
             },
             methods:{
                 add:function(){
                     if(this.aa != ''){
-                        this.items.push(this.aa);
+                        this.items.push({val:this.aa,active:false});
                         this.aa = '';
                         this.items.sort(function(a,b){
-                            return a>b;
+                            return a.val>b.val;
                         });
                         this.showItems = this.items;
                     }
                 },
                 filter:function(){
                     var _aa = this.aa;
-                    var arr = this.items.filter(function(val){
-                        return val.indexOf(_aa) > -1
+                    var arr = this.items.filter(function(obj){
+                        return obj.val.indexOf(_aa) > -1
                     });
                     this.showItems = arr;
                 }
