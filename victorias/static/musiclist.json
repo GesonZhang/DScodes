@@ -1,0 +1,19 @@
+{
+  "albums":[
+    {
+      "name": "LadyGaga",
+      "id":19723756,
+      "bg": "static/img/ladygaga2.jpg"
+    },
+    {
+      "name": "Bruno Mars",
+      "id":3779629,
+      "bg":"static/img/mars.jpg"
+    },
+    {
+      "name": "The Weeknd",
+      "id":2884035,
+      "bg":"static/img/weeknd.jpg"
+    }
+  ]
+}

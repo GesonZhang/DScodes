@@ -1,0 +1,24 @@
+{
+  "productlist":[
+    {
+      "name": "panties",
+      "id":19723756,
+      "bg": "static/img/productlist/061917-panties-ftr.jpg"
+    },
+    {
+      "name": "lingerie",
+      "id":3779629,
+      "bg":"static/img/productlist/061917-lingerie-ftr.jpg"
+    },
+    {
+      "name": "sport",
+      "id":2884035,
+      "bg":"static/img/productlist/061217-sport-bra-ftr.jpg"
+    },
+    {
+      "name": "beauty",
+      "id":21845217,
+      "bg":"static/img/productlist/062117-beauty-ftr.jpg"
+    }
+  ]
+}
