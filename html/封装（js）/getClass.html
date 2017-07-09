@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>获取class</title>
+</head>
+<body>
+    <ul id="ul1">
+        <li class="aa">jfhkjh</li>
+        <li>fdsfsdf</li>
+        <li class="aa bb">efefdsfdfsdf</li>
+        <li class="aacc">erhewklrjklwje;</li>
+    </ul>
+    <span class="aa">12345678</span>
+</body>
+<script>
+    var oUl = document.getElementById('ul1');
+
+
+
+
+    function getClass(clsName,context){
+        context = context || document; //context如果不传值，默认值就是document
+        var aTag = context.getElementsByTagName('*'); //获取context下的所有标签
+        var res = [];
+      for(i=0;i<aTag.length;i++){
+
+      }
+
+    }
+</script>
+</html>

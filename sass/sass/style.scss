@@ -1,0 +1,26 @@
+body{
+  color:#fff;
+}
+.div6{
+  color: #00AA88;
+}
+div7{
+  background: transparent;
+}
+$color:#fff;
+.div{
+  color:$color
+}
+div{
+  background: red;
+  ul{
+    background: pink;
+    a{
+      outline: none;
+      &:hover{
+        color:$color;
+      }
+    }
+
+  }
+}
