@@ -1,0 +1,6 @@
+<view class="load-page">
+  <image class='load-img' src='/images/92.gif'></image>
+  <view class='slogan'>
+   <image class='slogan-img' src='/images/loadimg.png'></image>
+  </view>
+</view>
