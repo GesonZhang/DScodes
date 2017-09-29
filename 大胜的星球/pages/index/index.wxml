@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="mask" style="display: {{screenType?'block':'none'}}">
+   <icon class="clo-mask" bindtap="closeList" type="cancel" size="30" color="#49b39c"/>
+    <view class="titlebox">{{title}}</view>
+    <view class="contentbox">
+      <text class="article" decode="true">{{article}}</text>
+    </view>
+</view>
+<view class="container">
+  <view animation="{{animation}}" class="img-content content-f" bindtap="showList" style="z-index:{{screenTypef?'100':'0'}};">
+  <image src='/images/111117.jpg'></image>
+  </view>
+   <view animation="{{animations}}" style="z-index:{{screenTypes?'100':'0'}};" class="img-content content-s" bindtap="showLists">
+  <image src='/images/123.jpg'></image>
+  </view>
+   <view animation="{{animationt}}" style="z-index:{{screenTypet?'100':'0'}};" class="img-content content-t" bindtap="showListt">
+  <image src='/images/bg.jpg'></image>
+  </view>
+</view>
+
