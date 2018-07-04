@@ -35,7 +35,7 @@ optionLine = {
     },
     toolbox: {
         feature: {
-            saveAsImage: {}//将统计图保存为
+            saveAsImage: {}// 将统计图保存为
         }
         ,right:100
         ,top:0
