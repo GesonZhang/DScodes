@@ -25,16 +25,6 @@ export default {
                 color: [
                     '#4c84ff'
                 ],
-                title: {
-                    subtext: '单位(w)',
-                    y: 'top',
-                    subtextStyle: {
-                        fontSize: 12,
-                        fontFamily: 'Arial',
-                        color: '#ECEBF0',
-                        verticalAlign: 'bottom'
-                    }
-                },
                 tooltip: {
                     trigger: 'axis',
                     formatter(params) {
@@ -46,8 +36,8 @@ export default {
                     },
                     axisPointer: {
                         label: {
-                            // backgroundColor: '#fff',
-                            // border: '1px solid yellow'
+                            backgroundColor: '#fff',
+                            border: '1px solid yellow'
                         }
                     }
                 },
@@ -84,6 +74,10 @@ export default {
                     {
                         type: 'value',
                         data: [0, 50, 100, 150, 200],
+                        axisLabel: {
+                            formatter: '{value}w'
+                        },
+                        // 自定义y轴
                         axisLine: {
                             lineStyle: {
                                 color: '#ECEBF0',
